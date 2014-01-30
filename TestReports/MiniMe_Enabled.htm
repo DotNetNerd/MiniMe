@@ -1,0 +1,331 @@
+<html>
+	<head>
+		<title>
+			Load Test Report
+		</title><style>
+			p
+{
+	font-size:11.0pt;
+	font-weight:400;
+	font-family:Calibri, sans-serif;
+	width: 800px;
+}
+
+.created-by
+{
+	font-size:9.0pt;
+	font-weight:400;
+	font-family:Calibri, sans-serif;
+	color: Gray;
+	margin-top: 40px;
+}.main-heading
+{
+	color: #1F497D;
+	font-size: 18.0pt;
+	font-weight: 700;
+	font-style: normal;
+	text-decoration: none underline;
+	font-family: Cambria, sans-serif;
+}
+
+.section-heading {
+	color: #1F497D;
+	font-size: 15.0pt;
+	font-weight: 700;
+	font-style: normal;
+	text-decoration: none;
+	font-family: Calibri, sans-serif;
+}
+
+summary_table.td {
+	border-style: none;
+	border-color: inherit;
+	border-width: medium;
+	padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	vertical-align:bottom;
+	white-space:nowrap;
+	}
+
+.summary-left-col {
+	color: black;
+	font-size: 11.0pt;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	font-family: Calibri, sans-serif;
+	vertical-align: bottom;
+	white-space: normal;
+	border: .5pt solid black;
+	padding-left: 5px;
+	padding-right: 1px;
+	padding-top: 1px;
+	background: #DBE5F1;
+}
+.summary-right-col {
+	color: black;
+	font-size: 11.0pt;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	font-family: Calibri, sans-serif;
+	text-align: right;
+	vertical-align: bottom;
+	white-space: normal;
+	border: .5pt solid black;
+	padding-left: 1px;
+	padding-right: 5px;
+	padding-top: 1px;
+}
+.summary-blank-line {
+	color: black;
+	font-size: 11.0pt;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	font-family: Calibri, sans-serif;
+	vertical-align: bottom;
+	white-space: normal;
+	border: 0;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+}
+.summary-red-font {
+	color: red;
+	font-size: 11.0pt;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	font-family: Calibri, sans-serif;
+	text-align: right;
+	vertical-align: bottom;
+	white-space: normal;
+	border: .5pt solid black;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+}
+.summary-section-header {
+	color: white;
+	font-size: larger;
+	font-weight: 700;
+	font-style: normal;
+	text-decoration: none;
+	font-family: Calibri, sans-serif;
+	vertical-align: bottom;
+	white-space: normal;
+	border-left-style: none;
+	border-left-color: inherit;
+	border-left-width: medium;
+	border-right-style: none;
+	border-right-color: inherit;
+	border-right-width: medium;
+	border-top-style: none;
+	border-top-color: inherit;
+	border-top-width: medium;
+	border-bottom: 1.5pt solid #A8C0DE;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+	background: #95B3D7;
+}
+.grid-header-cell
+{
+	padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	color:white;
+	font-size:12.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	text-align:center;
+	vertical-align:middle;
+	border: 1pt solid #7F7F7F;
+	background:#95B3D7;
+	max-width: 88px;
+}
+	
+.grid-left-cell
+{
+	padding-top:1px;
+	padding-right:5px;
+	padding-left:5px;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	vertical-align:bottom;
+	border: 1pt solid #A5A5A5;
+	background:#DBE5F1;
+}	
+	
+.number-grid-cell
+{
+	padding-top:1px;
+	padding-right:5px;
+	padding-left:5px;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-family:Calibri, sans-serif;
+	vertical-align:bottom;
+	border:1pt solid #A5A5A5;
+	max-width:50px;
+	text-align:center;
+}
+
+.text-grid-cell
+{
+	padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-family:Calibri, sans-serif;
+	vertical-align:bottom;
+	border:1pt solid #A5A5A5;
+	max-width:250px;
+	overflow:hidden;
+	white-space:nowrap;
+	direction: rtl;
+	text-align:right;
+}
+
+		</style>
+	</head><body>
+		<p class="main-heading">Load Test Report</p><p class="section-heading">Test Summary</p><table id="summary_table" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+			<tr>
+				<td class="summary-section-header" colspan="2">Test Case Summary</td>
+			</tr><tr>
+				<td class="summary-left-col">Primary Pages</td><td class="summary-right-col">1</td>
+			</tr><tr>
+				<td class="summary-left-col">URLs </td><td class="summary-right-col">1</td>
+			</tr><tr>
+				<td class="summary-blank-line" colspan="2">&nbsp;</td>
+			</tr><tr>
+				<td class="summary-section-header" colspan="2">Test Parameters</td>
+			</tr><tr>
+				<td class="summary-left-col">Think time between base pages</td><td class="summary-right-col">1s</td>
+			</tr><tr>
+				<td class="summary-left-col">Think  time between iterations</td><td class="summary-right-col">0s</td>
+			</tr><tr>
+				<td class="summary-left-col">Load pattern</td><td class="summary-right-col">Constant load</td>
+			</tr><tr>
+				<td class="summary-left-col">Users</td><td class="summary-right-col">5</td>
+			</tr><tr>
+				<td class="summary-left-col">Browser Type</td><td class="summary-right-col">IE6</td>
+			</tr><tr>
+				<td class="summary-left-col">Network Type</td><td class="summary-right-col">Dial-Up 56k</td>
+			</tr><tr>
+				<td class="summary-left-col">Complete test after</td><td class="summary-right-col">00:01:00</td>
+			</tr><tr>
+				<td class="summary-left-col">Warm-up time</td><td class="summary-right-col">0 seconds</td>
+			</tr><tr>
+				<td class="summary-blank-line" colspan="2">&nbsp;</td>
+			</tr><tr>
+				<td class="summary-section-header" colspan="2">Test Run Information</td>
+			</tr><tr>
+				<td class="summary-left-col">Date</td><td class="summary-right-col">aug-4 2011</td>
+			</tr><tr>
+				<td class="summary-left-col">Start Time</td><td class="summary-right-col">19:04:32.53</td>
+			</tr><tr>
+				<td class="summary-left-col">End Time</td><td class="summary-right-col">19:05:33.58</td>
+			</tr><tr>
+				<td class="summary-left-col">Warm-up (s)</td><td class="summary-right-col">0</td>
+			</tr><tr>
+				<td class="summary-left-col">Aggregate Session time (s)</td><td class="summary-right-col">304,83</td>
+			</tr><tr>
+				<td class="summary-left-col">Test run duration (s)</td><td class="summary-right-col">61,05</td>
+			</tr><tr>
+				<td class="summary-blank-line" colspan="2">&nbsp;</td>
+			</tr><tr>
+				<td class="summary-section-header" colspan="2">Overall Result</td>
+			</tr><tr>
+				<td class="summary-left-col">Status</td><td class="summary-right-col">Completed</td>
+			</tr><tr>
+				<td class="summary-left-col">Max User Load</td><td class="summary-right-col">5</td>
+			</tr><tr>
+				<td class="summary-left-col">Total bytes sent</td><td class="summary-right-col">368.445</td>
+			</tr><tr>
+				<td class="summary-left-col">Total bytes received</td><td class="summary-right-col">960.123</td>
+			</tr><tr>
+				<td class="summary-left-col">Bytes sent/sec</td><td class="summary-right-col">6.035,482</td>
+			</tr><tr>
+				<td class="summary-left-col">Bytes received/sec</td><td class="summary-right-col">15.727,734</td>
+			</tr><tr>
+				<td class="summary-blank-line" colspan="2">&nbsp;</td>
+			</tr><tr>
+				<td class="summary-section-header" colspan="2">Errors</td>
+			</tr><tr>
+				<td class="summary-left-col">Http Errors</td><td class="summary-right-col">0</td>
+			</tr><tr>
+				<td class="summary-left-col">Total Timeouts</td><td class="summary-right-col">0</td>
+			</tr><tr>
+				<td class="summary-left-col">Page Timeouts</td><td class="summary-right-col">0</td>
+			</tr><tr>
+				<td class="summary-left-col">Missed Goals</td><td class="summary-right-col">0</td>
+			</tr><tr>
+				<td class="summary-blank-line" colspan="2">&nbsp;</td>
+			</tr><tr>
+				<td class="summary-section-header" colspan="2">Test Iterations</td>
+			</tr><tr>
+				<td class="summary-left-col">Iterations Started</td><td class="summary-right-col">1015</td>
+			</tr><tr>
+				<td class="summary-left-col">Iterations Completed</td><td class="summary-right-col">1015</td>
+			</tr><tr>
+				<td class="summary-left-col">Avg. iteration time (s)</td><td class="summary-right-col">0,30</td>
+			</tr><tr>
+				<td class="summary-blank-line" colspan="2">&nbsp;</td>
+			</tr><tr>
+				<td class="summary-section-header" colspan="2">Requests (HTTP transactions)</td>
+			</tr><tr>
+				<td class="summary-left-col">Total requests</td><td class="summary-right-col">1.015</td>
+			</tr><tr>
+				<td class="summary-left-col">Requests/sec</td><td class="summary-right-col">16,63</td>
+			</tr><tr>
+				<td class="summary-left-col">Avg. response time (s)</td><td class="summary-right-col">0,30</td>
+			</tr><tr>
+				<td class="summary-blank-line" colspan="2">&nbsp;</td>
+			</tr>
+		</table><p class="section-heading">Key Indicators</p><p><img src="MiniMe_Enabled_files/lseqvg3s.wcx.tmp" /></p><p class="section-heading">Performance Counters</p><p><img src="MiniMe_Enabled_files/mgeq3mbg.3mo.tmp" /></p><p class="section-heading">Page Details</p><table border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;table-layout:fixed;border:1.5pt solid windowtext;">
+			<tr>
+				<td class="grid-header-cell">#</td><td class="grid-header-cell">Host</td><td class="grid-header-cell">Page</td><td class="grid-header-cell">Iterations</td><td class="grid-header-cell">Avg</td><td class="grid-header-cell">Min</td><td class="grid-header-cell">Median</td><td class="grid-header-cell">90%</td><td class="grid-header-cell">95%</td><td class="grid-header-cell">99%</td><td class="grid-header-cell">Max</td><td class="grid-header-cell">Std Dev</td><td class="grid-header-cell">Goal</td><td class="grid-header-cell">Missed Goal %</td><td class="grid-header-cell">Errors %</td><td class="grid-header-cell">Timeouts %</td><td class="grid-header-cell">Total Requests</td><td class="grid-header-cell">Performance Requests</td><td class="grid-header-cell">HTTP Errors</td><td class="grid-header-cell">Request Timeouts</td>
+			</tr><tr>
+				<td class="grid-left-cell">1</td><td class="text-grid-cell" style="padding-right:15px;">localhost</td><td class="text-grid-cell" style="padding-right:7px;">/SimplePage.aspx</td><td class="number-grid-cell">1015</td><td class="number-grid-cell">0,3</td><td class="number-grid-cell">0,3</td><td class="number-grid-cell">0,3</td><td class="number-grid-cell">0,3</td><td class="number-grid-cell">0,3</td><td class="number-grid-cell">0,3</td><td class="number-grid-cell">0,431</td><td class="number-grid-cell">0,005</td><td class="number-grid-cell"></td><td class="number-grid-cell"></td><td class="number-grid-cell"></td><td class="number-grid-cell"></td><td class="number-grid-cell">1015</td><td class="number-grid-cell">1015</td><td class="number-grid-cell"></td><td class="number-grid-cell"></td>
+			</tr>
+		</table><p class="section-heading">Request Details</p><table border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;table-layout:fixed;border:1.5pt solid windowtext;">
+			<tr>
+				<td class="grid-header-cell">#</td><td class="grid-header-cell">Host</td><td class="grid-header-cell">Path</td><td class="grid-header-cell">Response Time (s)</td><td class="grid-header-cell">TTFB (s)</td><td class="grid-header-cell">Network Time (s)</td><td class="grid-header-cell">Number of Requests</td><td class="grid-header-cell">Errors</td><td class="grid-header-cell">Timeouts</td>
+			</tr><tr>
+				<td class="grid-left-cell">1</td><td class="text-grid-cell" style="padding-right:15px;">localhost</td><td class="text-grid-cell" style="padding-right:7px;">/SimplePage.aspx</td><td class="number-grid-cell">0,3</td><td class="number-grid-cell">0,3</td><td class="number-grid-cell">0</td><td class="number-grid-cell">1015</td><td class="number-grid-cell"></td><td class="number-grid-cell"></td>
+			</tr>
+		</table><p class="section-heading">Iteration Details</p><table border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;table-layout:fixed;border:1.5pt solid windowtext;">
+			<tr>
+				<td class="grid-header-cell">User</td><td class="grid-header-cell">Iterations Started</td><td class="grid-header-cell">Iterations Completed</td><td class="grid-header-cell">Incomplete Iteration's Requests</td><td class="grid-header-cell">Total Requests</td>
+			</tr><tr>
+				<td class="grid-left-cell">1</td><td class="number-grid-cell">203</td><td class="number-grid-cell">203</td><td class="number-grid-cell">0</td><td class="number-grid-cell">203</td>
+			</tr><tr>
+				<td class="grid-left-cell">2</td><td class="number-grid-cell">203</td><td class="number-grid-cell">203</td><td class="number-grid-cell">0</td><td class="number-grid-cell">203</td>
+			</tr><tr>
+				<td class="grid-left-cell">3</td><td class="number-grid-cell">203</td><td class="number-grid-cell">203</td><td class="number-grid-cell">0</td><td class="number-grid-cell">203</td>
+			</tr><tr>
+				<td class="grid-left-cell">4</td><td class="number-grid-cell">203</td><td class="number-grid-cell">203</td><td class="number-grid-cell">0</td><td class="number-grid-cell">203</td>
+			</tr><tr>
+				<td class="grid-left-cell">5</td><td class="number-grid-cell">203</td><td class="number-grid-cell">203</td><td class="number-grid-cell">0</td><td class="number-grid-cell">203</td>
+			</tr>
+		</table><p class="created-by">Generated with StresStimulus Pro v1.0.4231 by <a href="http://stresstimulus.stimulustechnology.com/" target="_blank" >Stimulus Technology</a></p>
+	</body>
+</html>

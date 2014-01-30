@@ -1,0 +1,50 @@
+﻿@using MiniMe
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    @{Reference.StyleSheet.Add(Url.Content("~/Content/Site.css")).Add(Url.Content("~/Content/Site2.css"));}
+    @*@MvcHtmlString.Create(Reference.StyleSheet.Add(Url.Content("~/Content/Site.css")).Add(Url.Content("~/Content/Site2.css")).Render(Url.Content("~/Content/Site_#.css"))) *@
+
+	@{Reference.Scss.ForceRender().Add("/Content/test.css").Add("/Content/test2.css");}
+	
+	@{Reference.Less.ForceRender().Add("/Content/test.less").Add("/Content/test2.less");}
+
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div id="title">
+                <h1>My MVC Application</h1>
+            </div>
+            <div id="logindisplay">
+                @Html.Partial("_LogOnPartial")
+            </div>
+            <nav>
+                <ul id="menu">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                </ul>
+            </nav>
+        </header>
+        <section id="main">
+            @RenderBody()
+        </section>
+        <footer>
+        </footer>
+    </div>
+
+   @* @{ Reference.Cdn.Add(Url.Content("/Scripts/jquery-1.5.1.js"), "http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js");
+    }
+
+    @{ Reference.JavaScript.Add("/Scripts/MicrosoftAjax.debug.js").Add("/Scripts/modernizr-1.7.min.js"); }*@
+
+    @Html.Raw(Reference.JavaScript.ForceRender().Add("/Scripts/test.js").Render("/Scripts/site_#.js"))
+
+   @* @Html.Raw(Reference.CoffeeScript.ForceRender().Add("/Scripts/testCoffee.js").Render("/Scripts/t_#.js"))*@
+
+    @*@{Reference.CoffeeScript.ForceRender().Add("/Scripts/test.js").Add("/Scripts/test2.js");}*@
+
+</body>
+</html>

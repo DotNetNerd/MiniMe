@@ -1,4 +1,64 @@
+
 MiniMe
 ======
 
-Minification and bundeling tool
+Thank you for using MiniMe. Getting started is really as easy as 1-2-3, so let me walk you through it really quick.
+
+- Add references to MiniMe.dll and AjaxMin.dll
+
+- Use the MiniJavaScriptBuilder or MiniStyleSheetBuilder, accessible through the Reference class, to add the files you wish to bundle. Optionally specifying configuration
+
+@{ Reference.JavaScript
+            .ReRenders.When.AnySourceFileChanges()
+            .ForceRender()
+            .Add("/Scripts/jquery-1.5.1.js")
+            .Add("/Scripts/modernizr-1.7.min.js") }
+
+If you are adding files from e.g. a usercontrol, you might wish for it to be rendered below the scripts for the masterpage. To do this simply assign an index when you add the files.
+
+@{ Reference.JavaScript.With.GroupIndex(1).Add("/scripts/jquery.js"); }
+
+If no index is assigned it will be set to 0. Files are ordered first by index, and then by the order they were added.
+
+- Call the *Render* method to render the bundled and minimized files.
+- Or register the HttpHandler to have CSS rendered in the header and JavaScript rendered at the bottom of the page.
+
+###Sample
+    <system.webServer>
+        <modules>
+            <add name="MiniHttpModule" type="MiniMe.MiniHttpModule, MiniMe"/>
+
+or
+
+	<system.web>
+		<httpModules>
+			<add name="MiniHttpModule" type="MiniMe.MiniHttpModule, MiniMe"/>
+			
+and
+
+    <configSections>
+        <sectionGroup name="miniMeAppSettingsGroup">
+            <section name="miniMeAppSettings" type="MiniMe.Configuration.MiniMeConfigurationSection"/>
+        </sectionGroup>
+    </configSections>
+
+    <miniMeAppSettingsGroup>
+        <miniMeAppSettings MiniJsRelativePath="/Scripts/Site_#.min.js" MiniCssRelativePath="/Content/Site_#.css"/>
+    </miniMeAppSettingsGroup>
+			
+Conventions
+-----------
+	
+- The HttpHandler assumes the paths: "/Scripts" and "/Content" are used to work with the default ASP.NET MVC project structure. This can be changed using a custom configuration section as shown below.
+
+- A # sign in the path will be replaced by a hash of the filecontent. This enables versioning so the files can be cached, while the user will still get any changes made to the files.
+- If debug mode is set in web.config or the site is run locally the files will be rendered one at a time without any change, enabling easy debugging.
+- If you are not in debug mode and you don't run locally or you call .ForceRender(), the files will be bundled, minimized and versioned. The minimized versions will be used if they exist - otherwise a minimized version will be made on the fly and bundled into the complete file.
+
+	<system.web>
+		<compilation debug="true" targetFramework="4.0">
+
+Up front minification
+---------------------
+To have minimized versions created when the application starts you can simply point to a directory containing all your JavaScript files like so:
+new MiniGenerator().EnsureMiniVersions("/Scripts");
